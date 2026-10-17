@@ -6,15 +6,25 @@ Unplanned component failures can disrupt a commercial electric fleet and make ma
 
 ## Proposed system
 
-```mermaid
-flowchart LR
-  T[Telemetry and operating context] --> D[Data quality and time alignment]
-  M[Maintenance event records] --> D
-  D --> B[Operating-state baseline]
-  B --> S[Anomaly scoring]
-  S --> C[Failure classification when labels support it]
-  C --> R[Fleet manager and technician review]
-  R --> F[Confirmed outcomes and model monitoring]
+![Implementation mechanism: Assumed incident count and unit cost → Apply avoided-incident fraction → Subtract intervention and platform costs → Calculate net scenario benefit → Solve break-even avoided fraction](assets/mechanism.svg)
+
+## Try a small example
+
+A hypothetical Decimal-valued scenario exercises cost and break-even arithmetic. It does not demonstrate deployed predictive maintenance or measured savings.
+
+After the local setup below, run from the repository root:
+
+```sh
+python examples/quickstart.py
+```
+
+The [example source](examples/quickstart.py), [captured output](examples/expected-output.txt) and [execution record](examples/environment.json) keep this demonstration inspectable. Floating-point values may vary with library versions.
+
+Observed output from this run:
+
+```text
+{'avoided_loss': '150000.0', 'intervention_cost': '40000', 'net_benefit': '60000.0'}
+{'break_even': '0.18'}
 ```
 
 The strategy combines anomaly detection with a supervised failure classifier when enough labeled events exist. Inputs include component telemetry, work orders, and operating conditions. A fleet dashboard would show component risk, supporting signals, and service recommendations. Remaining useful life requires a separately validated model; anomaly scores alone do not establish days to failure.

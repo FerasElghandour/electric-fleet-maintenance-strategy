@@ -1,0 +1,2 @@
+{'avoided_loss': '150000.0', 'intervention_cost': '40000', 'net_benefit': '60000.0'}
+{'break_even': '0.18'}
