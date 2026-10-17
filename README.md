@@ -57,3 +57,7 @@ python -m unittest discover -s tests -v
 ## Practical relevance
 
 The project connects an ML proposal to fleet decisions, technician workload, evidence requirements, and an explicit cost model. Deployment decisions must depend on event-level validation and a controlled pilot. Safety-critical maintenance schedules remain under qualified human control.
+
+## Reuse
+
+The original contributions listed in [LICENSING.md](LICENSING.md) are available under [MIT](LICENSE). This scoped grant preserves upstream notices and separate dataset, simulator, notebook and checkpoint terms.
