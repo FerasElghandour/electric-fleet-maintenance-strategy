@@ -8,6 +8,15 @@ Unplanned component failures can disrupt a commercial electric fleet and make ma
 
 ![Implementation mechanism: Assumed incident count and unit cost → Apply avoided-incident fraction → Subtract intervention and platform costs → Calculate net scenario benefit → Solve break-even avoided fraction](assets/mechanism.svg)
 
+
+
+## Reproduce and inspect
+
+The executable reproduction profile now records exact commands, input/source hashes, dependency versions, logs and pass/fail status. Its scope distinguishes behavior checks from full-data benchmarks.
+
+[Commands, artifacts and benchmark scope](BENCHMARKS.md) · [Versioned profiles](reproduction.json)
+
+
 ## Try a small example
 
 A hypothetical Decimal-valued scenario exercises cost and break-even arithmetic. It does not demonstrate deployed predictive maintenance or measured savings.
